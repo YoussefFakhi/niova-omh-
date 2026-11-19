@@ -155,6 +155,9 @@ header.solid .burger{background:var(--bg);color:var(--ink)}
 .m p{font-size:14px;color:var(--metal);margin-top:6px}
 .m .tbd{display:inline-block;margin-top:14px;font-size:12px;color:var(--steel);border:1px dashed var(--steel-m);border-radius:999px;padding:3px 10px}
 
+/* quality */
+.quality{background:var(--white)}.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.q{padding:30px;border:1px solid var(--line);border-radius:var(--r);background:var(--white);position:relative}.q .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--red-tint);color:var(--red);font:700 13px/1 var(--head)}.q h3{margin:20px 0 8px}.q p{font-size:15px;color:var(--ink2)}
+
 /* sectors */
 .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .sector{padding:28px;border-radius:var(--r);background:var(--bg);border:1px solid transparent;transition:background .25s,color .25s,border-color .25s}
@@ -207,7 +210,7 @@ footer p{font-size:13px;color:var(--steel)}
 @media(max-width:1080px){
   .about,.train{grid-template-columns:1fr;gap:56px}
   .bento{grid-template-columns:1fr}.feature{grid-row:auto}
-  .steps,.mgrid,.sgrid{grid-template-columns:1fr 1fr}
+  .steps,.mgrid,.sgrid,.qgrid{grid-template-columns:1fr 1fr}
   .steps{gap:0}.step:nth-child(2){border-right:0}.step:nth-child(n+3){border-top:1px solid var(--line)}.step:nth-child(3){padding-left:0}
   .contact-box{grid-template-columns:1fr;padding:40px}
   .pic{aspect-ratio:16/10}
@@ -222,16 +225,37 @@ footer p{font-size:13px;color:var(--steel)}
 @media(max-width:560px){
   .wrap{padding:0 16px}
   .hero{padding:8px}.hero-box{border-radius:22px}
-  .steps,.mgrid,.sgrid,.vals,.row2,.feature .ticks{grid-template-columns:1fr}.steps{display:block}.step,.step+ .step{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.hero-mark{display:none}
+  .steps,.mgrid,.sgrid,.qgrid,.vals,.row2,.feature .ticks{grid-template-columns:1fr}.steps{display:block}.step,.step+ .step{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.hero-mark{display:none}
   .contact-box{padding:24px 16px;border-radius:22px}
   form{padding:22px}
   .hero .btn{width:100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero-box>video{display:none}}
+
+/* 2026 industrial editorial redesign */
+:root{--lime:#D9FF3F;--paper:#EEF0E9;--void:#0A0F10;--signal:#FF5D3A}
+body{background:var(--paper)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.28;background-image:linear-gradient(rgba(18,25,27,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(18,25,27,.04) 1px,transparent 1px);background-size:44px 44px}
+.page-progress{position:fixed;z-index:90;top:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.1);transform-origin:left}.page-progress i{display:block;width:100%;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:left}
+header .wrap{max-width:none;padding:0 4.4%}header.solid{background:rgba(238,240,233,.9);backdrop-filter:blur(18px)}
+.hero{padding:0 10px 10px}.hero-box{min-height:calc(100svh - 10px);border-radius:0 0 28px 28px;isolation:isolate}.hero-box::before{right:8.5%;top:90px;bottom:34px;background:rgba(217,255,63,.44)}.hero-box::after{background-image:radial-gradient(circle at var(--mx,76%) var(--my,28%),rgba(255,93,58,.28),transparent 16%),var(--noise),radial-gradient(circle at 82% 88%,rgba(66,146,180,.22),transparent 30%),linear-gradient(90deg,rgba(10,15,16,.95) 0%,rgba(10,15,16,.72) 40%,rgba(10,15,16,.18) 76%,rgba(10,15,16,.04)),linear-gradient(0deg,rgba(10,15,16,.6),transparent 52%)}
+.hero-in{padding-top:184px;padding-bottom:112px}.hero h1{font-size:clamp(60px,8.6vw,144px);max-width:10ch;line-height:.88;letter-spacing:-.075em;text-wrap:balance}.hero .lead{max-width:49ch;font-size:clamp(17px,1.45vw,21px)}.hero .label{color:var(--lime)}.btn{border-radius:999px;font-weight:700}.btn-red{background:var(--signal)}.btn-red:hover{background:#ff4220}.btn-ghost{border-color:rgba(217,255,63,.65)}.btn-ghost:hover{background:var(--lime);color:var(--void)}
+.hero-mark{right:8.5%;bottom:40px;color:var(--lime);font-size:10px}.hero-dashboard{position:absolute;z-index:3;right:12.5%;bottom:40px;display:flex;gap:0;border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden;background:rgba(10,15,16,.46);backdrop-filter:blur(16px)}.hero-dashboard div{min-width:112px;padding:13px 16px;border-right:1px solid rgba(255,255,255,.16)}.hero-dashboard div:last-child{border:0}.hero-dashboard b{display:block;font:700 20px/1 var(--head);letter-spacing:-.04em;color:#fff}.hero-dashboard span{display:block;margin-top:5px;color:var(--metal);font:500 9px/1.25 var(--mono);letter-spacing:.09em}
+.capability-ticker{overflow:hidden;background:var(--lime);color:var(--void);border-block:1px solid var(--void);font:700 13px/1 var(--mono);letter-spacing:.08em;white-space:nowrap}.ticker-track{display:inline-flex;gap:36px;padding:16px 0;min-width:max-content;animation:ticker 24s linear infinite}.ticker-track span::after{content:"✦";margin-left:36px;color:var(--signal)}@keyframes ticker{to{transform:translateX(-50%)}}
+section{position:relative;padding:150px 0}.about{gap:9vw}.about .pic{border-radius:0;outline-color:var(--graphite);outline-offset:10px}.about .pic::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--signal);z-index:-1}.vals{gap:10px}.val{border-radius:0;background:rgba(255,255,255,.52);border:1px solid rgba(23,32,34,.08)}.val:hover{background:var(--void);color:#fff;border-color:var(--void);transform:translateY(-4px)}.val:hover span{color:var(--metal)}
+.services{background-color:#DDE1DB;background-image:radial-gradient(circle at 95% 0%,rgba(255,93,58,.22),transparent 30%),linear-gradient(rgba(10,15,16,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(10,15,16,.07) 1px,transparent 1px)}.services::before{border-color:rgba(10,15,16,.16)}.services::after{background-image:radial-gradient(rgba(255,93,58,.62) 1.3px,transparent 1.5px)}.head{margin-bottom:62px}.head h2{font-size:clamp(42px,5.3vw,80px);max-width:13ch}.card{border-radius:0;background:rgba(255,255,255,.86);box-shadow:none}.card:hover{border-color:var(--void);box-shadow:10px 10px 0 var(--void);transform:translate(-4px,-4px)}.feature{border-radius:0;background:var(--void)}.feature .ph{min-height:320px}.card .ic{border-radius:50%;background:#ffe2dc;color:var(--signal)}.card .more{color:var(--signal)}
+.proc{background-color:var(--void);background-image:radial-gradient(circle at 0% 100%,rgba(66,146,180,.24),transparent 34%),linear-gradient(rgba(217,255,63,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(217,255,63,.075) 1px,transparent 1px);color:#fff}.proc .lead,.proc .step p{color:var(--metal)}.proc .label{color:var(--lime)}.proc .step .n{background:var(--lime);color:var(--void)}.step::before{background:rgba(217,255,63,.5)}.step h3{font-size:21px}
+.machines{background-color:#101718}.machines .head h2{font-size:clamp(42px,5.3vw,76px)}.m{border-radius:0;position:relative;cursor:pointer;transition:transform .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}.m::after{content:"VIEW CAPABILITY";position:absolute;top:16px;right:16px;background:var(--lime);color:var(--void);padding:7px 9px;font:700 9px/1 var(--mono);letter-spacing:.08em;opacity:0;transform:translateY(-6px);transition:.25s var(--ease)}.m:hover,.m.is-active{transform:translateY(-8px);border-color:var(--lime);background:#172123}.m:hover::after,.m.is-active::after{opacity:1;transform:none}.m .ph{aspect-ratio:4/5}.m .body{padding:24px}.m h3{font-size:21px}.m p{font-size:15px;line-height:1.5}
+.quality{background:#F7F7F2}.q{border-radius:0;background:transparent;border-width:0 0 1px;padding:30px 0}.q:hover .n{background:var(--void);color:var(--lime);transform:rotate(45deg)}.q .n{transition:.3s var(--ease)}.q h3{font-size:26px}.qgrid{gap:42px}.train{background:var(--paper);padding:110px 0}.trow{border-radius:0;background:rgba(255,255,255,.52)}
+.contact-box{border-radius:0;background-color:var(--void);box-shadow:16px 16px 0 var(--lime)}.contact-box::before{width:600px;height:600px;border-color:rgba(217,255,63,.32)}form{border-radius:0}.f input,.f textarea{border-radius:0;background:#fbfbf8}.f input:focus,.f textarea:focus{border-color:var(--signal);box-shadow:4px 4px 0 #ffd5cc}footer{background:var(--void);color:#fff}footer .brand{color:#fff}footer p{color:var(--metal)}
+@media(max-width:1080px){.hero-dashboard{right:5%;bottom:42px}.hero-mark{display:none}.hero-box::before{right:5%}.head h2{max-width:16ch}}
+@media(max-width:860px){.hero-in{padding-top:148px}.hero h1{font-size:clamp(56px,13vw,96px)}.hero-dashboard{display:none}.capability-ticker{font-size:10px}.ticker-track{padding:13px 0}.head{margin-bottom:42px}section{padding:96px 0}.train{padding:80px 0}.contact-box{box-shadow:8px 8px 0 var(--lime)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Salta al contenuto</a>
+<div class="page-progress" aria-hidden="true"><i></i></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -243,6 +267,7 @@ footer p{font-size:13px;color:var(--steel)}
   <nav id="nav" aria-label="Principale">
     <a href="#azienda" data-it="Azienda" data-en="Company"></a>
     <a href="#servizi" data-it="Servizi" data-en="Services"></a>
+    <a href="#macchine" data-it="Macchine" data-en="Machines"></a>
     <a href="#contatti" data-it="Contatti" data-en="Contact"></a>
   </nav>
   <div class="hd-r">
@@ -268,8 +293,15 @@ footer p{font-size:13px;color:var(--steel)}
       <a class="btn btn-ghost" href="#servizi" data-it="Scopri le lavorazioni" data-en="Explore our work"></a>
     </div>
   </div>
+  <div class="hero-dashboard" aria-label="Capacità principali">
+    <div><b>3–5</b><span data-it="ASSI CNC" data-en="CNC AXES"></span></div>
+    <div><b>CAD/CAM</b><span data-it="DAL FILE AL PEZZO" data-en="FROM FILE TO PART"></span></div>
+    <div><b>CN · IT</b><span data-it="PIEMONTE" data-en="PIEDMONT"></span></div>
+  </div>
   <span class="hero-mark" data-it="Meccanica di precisione · dal 2023" data-en="Precision engineering · since 2023"></span>
 </div></div>
+
+<div class="capability-ticker" aria-label="Capacità Nuova OMH"><div class="ticker-track"><span>CNC TURNING</span><span>3 / 4 / 5 AXIS MILLING</span><span>CAD / CAM</span><span>PROTOTYPES &amp; SMALL BATCHES</span><span>MADE IN ITALY</span><span>CNC TURNING</span><span>3 / 4 / 5 AXIS MILLING</span><span>CAD / CAM</span><span>PROTOTYPES &amp; SMALL BATCHES</span><span>MADE IN ITALY</span></div></div>
 
 <!-- ABOUT -->
 <section id="azienda"><div class="wrap about">
@@ -343,6 +375,33 @@ footer p{font-size:13px;color:var(--steel)}
   </div>
 </div></section>
 
+<!-- MACHINE PARK -->
+<section id="macchine" class="machines"><div class="wrap">
+  <div class="head">
+    <div><span class="label rv" data-it="Parco macchine" data-en="Machine park"></span><h2 class="rv" data-it="Tecnologia CNC per ogni complessità." data-en="CNC technology for every level of complexity."></h2></div>
+    <p class="lead rv" data-it="Tornitura e fresatura CNC per trasformare il vostro disegno in un componente pronto alla produzione." data-en="CNC turning and milling to turn your drawing into a production-ready component."></p>
+  </div>
+  <div class="mgrid">
+    <article class="m rv is-active" tabindex="0" role="button" aria-pressed="true"><div class="ph"><img src="img/tornio.jpg" alt="Tornitura CNC di un componente metallico" loading="lazy"></div><div class="body"><h3 data-it="Tornitura CNC" data-en="CNC turning"></h3><p data-it="Per particolari torniti su disegno, con attenzione a quote, finitura e ripetibilità." data-en="For turned parts made to drawing, with attention to dimensions, finish and repeatability."></p></div></article>
+    <article class="m rv" tabindex="0" role="button" aria-pressed="false" style="--d:.06s"><div class="ph"><img src="img/fresa3.jpg" alt="Centro di lavoro CNC per fresatura a 3 assi" loading="lazy"></div><div class="body"><h3 data-it="Fresatura 3 assi" data-en="3-axis milling"></h3><p data-it="Lavorazioni affidabili per superfici, fori e geometrie prismatiche." data-en="Reliable machining for surfaces, holes and prismatic geometries."></p></div></article>
+    <article class="m rv" tabindex="0" role="button" aria-pressed="false" style="--d:.12s"><div class="ph"><img src="img/fresa4.jpg" alt="Centro di lavoro CNC per fresatura a 4 assi" loading="lazy"></div><div class="body"><h3 data-it="Fresatura 4 assi" data-en="4-axis milling"></h3><p data-it="Più lavorazioni nello stesso piazzamento per ottimizzare tempi e precisione." data-en="More operations in a single setup to optimise time and precision."></p></div></article>
+    <article class="m rv" tabindex="0" role="button" aria-pressed="false" style="--d:.18s"><div class="ph"><img src="img/fresa5.jpg" alt="Centro di lavoro CNC per fresatura a 5 assi" loading="lazy"></div><div class="body"><h3 data-it="Fresatura 5 assi" data-en="5-axis milling"></h3><p data-it="Per componenti complessi e lavorazioni multi-faccia su disegno." data-en="For complex components and multi-face machining made to drawing."></p></div></article>
+  </div>
+</div></section>
+
+<!-- QUALITY -->
+<section id="qualita" class="quality"><div class="wrap">
+  <div class="head">
+    <div><span class="label rv" data-it="Qualità" data-en="Quality"></span><h2 class="rv" data-it="Precisione verificata in ogni fase." data-en="Precision checked at every stage."></h2></div>
+    <p class="lead rv" data-it="Ogni commessa parte da requisiti chiari e segue un percorso tecnico fino alla consegna." data-en="Every order starts with clear requirements and follows a technical path through to delivery."></p>
+  </div>
+  <div class="qgrid">
+    <article class="q rv"><span class="n">01</span><h3 data-it="Lettura del disegno" data-en="Drawing review"></h3><p data-it="Analizziamo quote, tolleranze e requisiti prima di definire il ciclo di lavorazione." data-en="We review dimensions, tolerances and requirements before defining the machining cycle."></p></article>
+    <article class="q rv" style="--d:.08s"><span class="n">02</span><h3 data-it="Controllo in processo" data-en="In-process checks"></h3><p data-it="Verifichiamo le quote durante la lavorazione per mantenere il pezzo conforme al progetto." data-en="We check dimensions during machining to keep the part aligned with the project."></p></article>
+    <article class="q rv" style="--d:.16s"><span class="n">03</span><h3 data-it="Verifica finale" data-en="Final inspection"></h3><p data-it="Prima della consegna effettuiamo un ultimo riscontro del componente e delle sue specifiche." data-en="Before delivery, we carry out a final check of the component and its specifications."></p></article>
+  </div>
+</div></section>
+
 <!-- TRAINING — TODO: confirm topics with the owner -->
 <section id="formazione" style="padding-top:0;padding-bottom:96px"><div class="wrap train">
   <div>
@@ -407,6 +466,11 @@ document.getElementById("y").textContent=new Date().getFullYear();
 
 const hd=document.getElementById("hd");
 const solid=()=>hd.classList.toggle("solid",scrollY>window.innerHeight*.6);solid();addEventListener("scroll",solid,{passive:true});
+const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)");
+
+const progress=document.querySelector(".page-progress i");
+const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?scrollY/max:0})`};
+updateProgress();addEventListener("scroll",updateProgress,{passive:true});
 
 const nav=document.getElementById("nav"),bur=document.getElementById("burger");
 bur.onclick=()=>bur.setAttribute("aria-expanded",nav.classList.toggle("open"));
@@ -419,10 +483,18 @@ document.querySelectorAll("main section[id]").forEach(s=>spy.observe(s));
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll(".rv").forEach(e=>io.observe(e));
 
+// The machine cards work as a lightweight capability selector for mouse and keyboard users.
+const machineCards=[...document.querySelectorAll(".m")];
+const selectMachine=card=>machineCards.forEach(item=>{const active=item===card;item.classList.toggle("is-active",active);item.setAttribute("aria-pressed",active)});
+machineCards.forEach(card=>{card.addEventListener("click",()=>selectMachine(card));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selectMachine(card)}})});
+
+// Subtle pointer response gives the hero a live technical feel without affecting touch or reduced-motion visitors.
+const hero=document.querySelector(".hero-box");
+if(hero&&!reduceMotion.matches&&matchMedia("(pointer:fine)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",`${(e.clientX-r.left)/r.width*100}%`);hero.style.setProperty("--my",`${(e.clientY-r.top)/r.height*100}%`)});
+
 // Background video is progressive enhancement: only load it when the file exists
 // and the visitor has not asked for reduced motion. The still image stays as fallback.
 const heroVideo=document.getElementById("hero-video");
-const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)");
 if(heroVideo&&!reduceMotion.matches){
   fetch(heroVideo.dataset.src,{method:"HEAD"}).then(r=>{
     if(!r.ok)return;
